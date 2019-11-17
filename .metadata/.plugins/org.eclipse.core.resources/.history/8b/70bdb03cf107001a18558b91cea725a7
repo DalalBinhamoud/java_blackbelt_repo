@@ -1,0 +1,17 @@
+package com.dalal.taskManager.repositories;
+import java.util.List;
+
+import org.springframework.boot.autoconfigure.data.web.SpringDataWebProperties.Sort;
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
+
+import com.dalal.taskManager.models.Task;
+
+
+@Repository
+public interface TaskRepository  extends CrudRepository<Task, Long>{
+	//List<Task> findAll();
+	List<Task> findAll(new Sort(Sort.t.ASC, "priority"))
+//	Page<Ninja> findByPostId(Long dojoId, Pageable pageable);
+//	Optional<Ninja> findByIdAndPostId(Long id, Long dojoId);
+}

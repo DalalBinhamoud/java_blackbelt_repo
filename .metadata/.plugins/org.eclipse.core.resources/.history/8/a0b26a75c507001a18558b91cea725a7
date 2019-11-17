@@ -1,0 +1,5 @@
+package com.dalal.taskManager.repositories;
+
+public interface UserRepository {
+
+}

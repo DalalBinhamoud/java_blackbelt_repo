@@ -1,0 +1,46 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Tasks</title>
+</head>
+<body>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>  
+
+<h1>  Welcome, <c:out value="${user.name}"/></h1>
+
+<p>
+<p><a href="#" > Priority High-Low</a></p>
+<p><a href="#" > Priority Low-High</a></p>
+<a href="/logout" > Logout</a>
+</p>
+<table>
+<th>Task</th>
+<th>Creator</th>
+<th>Assignee</th>
+<th>Priority</th>
+
+<%
+    Collections.sort(yourList, new Comparator<Document>() {
+        public int compare (Document d1, Document d2) {
+            return d1.getUpdateTime().compare(d2.getUpdateTime());
+        }
+    });
+%>
+
+ <c:forEach items="${tasks}" var="task">
+     <tr>
+     <td> <a href="/tasks/${task.id}"><c:out value="${task.title}"/></a></td>
+     <td><c:out value="${task.creator}"/></td>
+     <td><c:out value="${task.user.getName()}"/></td>
+     <td><c:out value="${task.priority}"/></td>
+     </tr>
+        </c:forEach>
+
+</table> 
+
+<a href="/tasks/new"> Create Task</a>
+</body>
+</html>

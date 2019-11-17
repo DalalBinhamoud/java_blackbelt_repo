@@ -1,0 +1,35 @@
+package com.dalal.taskManager.services;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.stereotype.Service;
+
+import com.dalal.taskManager.models.User;
+import com.dalal.taskManager.repositories.UserRepository;
+
+@Service
+public class UserService {
+	 private final UserRepository userRepository;
+	 
+	    public UserService(UserRepository userRepository) {
+	        this.userRepository = userRepository;
+	    }
+	    
+	    public void createUser(User user) {
+	    	userRepository.save(user);
+	    }
+	    
+	    public List<User> allUsers() {
+	        return userRepository.findAll();
+	    }
+	    
+	    public User findUser(Long id) {
+	        Optional<User> optionalUser = userRepository.findById(id);
+	        if(optionalUser.isPresent()) {
+	            return optionalUser.get();
+	        } else {
+	            return null;
+	        }
+	    }
+}

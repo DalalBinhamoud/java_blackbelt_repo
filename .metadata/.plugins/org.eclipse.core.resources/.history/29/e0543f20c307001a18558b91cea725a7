@@ -1,0 +1,6 @@
+package com.dalal.taskManager.models;
+
+public class Task {
+
+}
+

@@ -1,0 +1,39 @@
+package com.dalal.taskManager.services;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.stereotype.Service;
+
+import com.dalal.taskManager.models.Task;
+import com.dalal.taskManager.repositories.TaskRepository;
+
+@Service
+public class TaskService {
+	
+	 private final TaskRepository taskRepository;
+	 
+	    public TaskService(TaskRepository taskRepository) {
+	        this.taskRepository = taskRepository;
+	    }
+	    
+	    public void createNinja(Task n) {
+	    	taskRepository.save(n);
+	    }
+	    
+	    public List<Task> allNinjas() {
+	        return taskRepository.findAll();
+	    }
+	    
+	    public Task TasksForDojo(Long id) {
+	        Optional<Task> optionalTask = taskRepository.findById(id);
+	        if(optionalTask.isPresent()) {
+	            return optionalTask.get();
+	        } else {
+	            return null;
+	        }
+	    }
+
+}
+
+

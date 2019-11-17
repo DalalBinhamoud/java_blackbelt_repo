@@ -1,0 +1,32 @@
+// Variable font - Hepta Slab ////////
+@import url("https://fonts.googleapis.com/css2?family=Hepta+Slab:wght@1..900&display=swap");
+
+
+// ////////////
+html,
+body {
+    min-height: 100vh;
+}
+
+body {
+    font-family: "Hepta Slab", sans-serif;
+    background: radial-gradient(at 50%, #333, #000);
+        overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+label{
+	color:white;
+}
+h1 {
+    color: #ffffff33;
+    font-size: 3em;
+    margin: 0.4em 1em;
+    position: relative;
+    display: inline-block;
+    line-height: 1.1em;
+    font-weight: 700;
+}
+
+

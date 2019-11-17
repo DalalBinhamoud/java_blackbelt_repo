@@ -1,0 +1,63 @@
+package com.dalal.taskManager.services;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.stereotype.Service;
+
+import com.dalal.taskManager.models.Task;
+import com.dalal.taskManager.models.User;
+import com.dalal.taskManager.repositories.TaskRepository;
+
+@Service
+public class TaskService {
+	
+	 private final TaskRepository taskRepository;
+	 
+	    public TaskService(TaskRepository taskRepository) {
+	        this.taskRepository = taskRepository;
+	    }
+	    
+//	    public void createTask(Task n) {
+//	    	taskRepository.save(n);
+//	    }
+//	    
+//	    public List<Task> allTasks() {
+//	        return taskRepository.findAll();
+//	    }
+//	    
+//	    public Task TasksForUser(Long id) {
+//	        Optional<Task> optionalTask = taskRepository.findById(id);
+//	        if(optionalTask.isPresent()) {
+//	            return optionalTask.get();
+//	        } else {
+//	            return null;
+//	        }
+//	    }
+//	    
+//	    public Task findTask(Long id) {
+//	        Optional<Task> optionalTask = taskRepository.findById(id);
+//	        if(optionalTask.isPresent()) {
+//	            return optionalTask.get();
+//	        } else {
+//	            return null;
+//	        }
+//	    }
+//	    
+//	    public Task updateTask(Long id,String title,User assignee,int priority) {
+//	    	Task updated_Task = this.findTask(id);
+//	 	   
+//	    	updated_Task.setTitle(title);
+//	    	updated_Task.setAssignee(assignee);
+//	    	updated_Task.setPriority(priority);
+//	 	   
+//	         return taskRepository.save(updated_Task);
+//	     }
+//
+//	 public void deleteTask(Long id) {
+//		 taskRepository.deleteById(id);
+//	 }
+
+}
+
+
